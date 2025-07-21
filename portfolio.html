@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự Án - Garage CarCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes slideDown { 0% { transform: translateY(-80px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+      .banner-animated { animation: slideDown 1.2s cubic-bezier(.42,.23,.67,.98) forwards; animation-delay: 0.2s; animation-fill-mode: both; opacity: 0;}
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: translateY(0);} }
+      .custom-section { animation: fadeInUp 1s cubic-bezier(.42,.23,.67,.98) .5s backwards; }
+      .cta-button { transition: background 0.3s, transform 0.2s; }
+      .cta-button:hover { background: #fff !important; color: #16A34A !important; transform: scale(1.08); }
+      .font-roboto { font-family: 'Roboto', Arial, sans-serif; letter-spacing: 2px; text-shadow: 0 2px 8px #2228; }
+      @media (max-width: 768px) { .banner-animated h1 { font-size: 2rem !important; } }
+    </style>
+</head>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<body class="bg-gray-100">
+    <!-- HEADER + NAVBAR đồng bộ -->
+    <header>
+    <nav class="bg-gradient-to-r from-gray-900 to-gray-800 text-white fixed w-full top-0 z-10 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tight text-white-400">Garage CarCare</h1>
+
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link text-lg">Trang Chủ</a>
+                <a href="about.html" class="nav-link text-lg">Giới Thiệu</a>
+                <a href="services.html" class="nav-link text-lg">Dịch Vụ</a>
+                <a href="portfolio.html" class="nav-link text-lg font-semibold text-green-400">Dự Án</a>
+                <a href="contact.html" class="nav-link text-lg">Liên Hệ</a>
+            </div>
+            <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white">
+            <div class="flex flex-col space-y-4 p-6">
+<a href="index.html" class="nav-link text-lg text-white hover:bg-gray-700 rounded px-4 py-2">Trang Chủ</a>
+                <a href="about.html" class="nav-link text-lg text-white hover:bg-gray-700 rounded px-4 py-2">Giới Thiệu</a>
+                <a href="services.html" class="nav-link text-lg text-white hover:bg-gray-700 rounded px-4 py-2">Dịch Vụ</a>
+                <a href="portfolio.html" class="nav-link text-lg font-semibold text-green-400 hover:bg-gray-700 rounded px-4 py-2">Dự Án</a>
+                <a href="contact.html" class="nav-link text-lg text-white hover:bg-gray-700 rounded px-4 py-2">Liên Hệ</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <!-- Banner với hiệu ứng animation -->
+    <section class="w-full h-64 md:h-80 bg-black flex items-center justify-center mt-16 mb-10 shadow-lg relative">
+        <img src="/WedXeOto/ảnh/anh1.jpg" alt="Banner Dự án" class="object-cover absolute inset-0 w-full h-full opacity-60">
+        <div class="relative z-10 text-center banner-animated">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 font-roboto">Dự Án Tiêu Biểu</h1>
+            <p class="text-xl font-medium text-white drop-shadow font-roboto">Khám phá các dự án nổi bật của Garage CarCare</p>
+        </div>
+    </section>
+    <section class="mb-12">
+  <h3 class="text-3xl font-bold text-center mb-6 font-roboto">Hình ảnh quảng bá</h3>
+  <div id="carcareCarousel" class="carousel slide mx-auto rounded-lg shadow-lg overflow-hidden" style="max-width: 1100px;" data-bs-ride="carousel"> 
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/WedXeOto/ảnh/anh23.jpg" class="d-block w-100 carousel-img" alt="Ảnh 1">
+      </div>
+      <div class="carousel-item">
+        <img src="/WedXeOto/ảnh/anh45.jpg" class="d-block w-100 carousel-img" alt="Ảnh 2">
+      </div>
+      <div class="carousel-item">
+        <img src="/WedXeOto/ảnh/anh68.jpg" class="d-block w-100 carousel-img" alt="Ảnh 3">
+      </div>
+      <div class="carousel-item">
+        <img src="/WedXeOto/ảnh/anh910.jpg" class="d-block w-100 carousel-img" alt="Ảnh 2">
+      </div>
+      <div class="carousel-item">
+        <img src="/WedXeOto/ảnh/anh45.jpg" class="d-block w-100 carousel-img" alt="Ảnh 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carcareCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Trước</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carcareCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Tiếp</span>
+    </button>
+  </div>
+</section>
+    <main class="container mx-auto px-4 pt-4 pb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 fade-in font-roboto">Các Dự Án Nổi Bật</h2>
+<!-- Chỉ giữ lại 3 ảnh + nội dung, bỏ mục liên hệ -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Dự án 1 -->
+            <div class="card bg-white rounded-lg shadow-md custom-section">
+                <img src="/WedXeOto/ảnh/g63.jpg" class="card-img-top w-full h-48 object-cover rounded-t-lg" alt="Dự án 1">
+                <div class="card-body p-6">
+                    <h5 class="card-title font-bold text-xl font-roboto">BRABUS 900 ROCKET EDITION - "1 OF 25"</h5>
+                    <p class="card-text text-gray-700">Power 662 kW / 900 hp | Torque 1250 Nm | 0-100 km/h 3.7 s | Vmax 280 km/h / 174 mphFuel Economy* city 17,1 l/100km | highway 12,9 l/100km | combined 14,4 l/100km | CO2 330 g/km</p>
+                </div>
+            </div>
+            <!-- Dự án 2 -->
+            <div class="card bg-white rounded-lg shadow-md custom-section">
+                <img src="/WedXeOto/ảnh/roll.jpg" class="card-img-top w-full h-48 object-cover rounded-t-lg" alt="Dự án 2">
+                <div class="card-body p-6">
+                    <h5 class="card-title font-bold text-xl font-roboto">BRABUS 700 BLUE SKY - ROLLS-ROYCE CULLINAN</h5>
+                    <p class="card-text text-gray-700">Power 515 kW / 700 hp | Torque 950 Nm | 0-100 km/h 5.0 s | Vmax 250 km/h / 155 mph
+Fuel Economy* combined 16,1 l/100km | CO2 366 g/km</p>
+                </div>
+            </div>
+            <!-- Dự án 3 -->
+            <div class="card bg-white rounded-lg shadow-md custom-section">
+                <img src="/WedXeOto/ảnh/xehong.jpg" class="card-img-top w-full h-48 object-cover rounded-t-lg" alt="Dự án 3">
+                <div class="card-body p-6">
+                    <h5 class="card-title font-bold text-xl font-roboto">BRABUS 600 PEETCH - RANGE ROVER P530</h5>
+                    <p class="card-text text-gray-700">Power 442 kW / 600 hp | Torque 800 Nm | 0-100 km/h 4.5 s | Vmax 250 km/h / 155 mph Fuel Economy* combined 11,6 l/100km | CO2 263 g/km</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white text-center py-8 mt-10">
+        <div class="container mx-auto px-4">
+            <p class="text-sm">© 2025 Garage CarCare. All rights reserved.</p>
+            <p class="text-sm mt-2">Email: <a href="mailto:contact@carcare.vn" class="underline hover:text-green-400">contact@carcare.vn</a></p>
+            <div class="flex justify-center gap-6 mt-2">
+              <a href="https://facebook.com" class="hover:text-green-400">Facebook</a>
+              <a href="https://instagram.com" class="hover:text-green-400">Instagram</a>
+              <a href="https://youtube.com" class="hover:text-green-400">Youtube</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
